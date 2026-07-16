@@ -20,7 +20,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.tripweather
         INFOPLIST_FILE: tripweather/Info.plist
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        TARGETED_DEVICE_FAMILY: "1,2"
+        TARGETED_DEVICE_FAMILY: "1"
     info:
       path: tripweather/Info.plist
       properties:
@@ -32,13 +32,19 @@ targets:
     platform: iOS
     sources: [tripweatherTests]
     dependencies:
-      - target: tripweather
+      - target: tripweather    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: "YES"
+
   tripweatherUITests:
     type: bundle.ui-testing
     platform: iOS
     sources: [tripweatherUITests]
     dependencies:
-      - target: tripweather
+      - target: tripweather    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: "YES"
+
 schemes:
   tripweather:
     build:
